@@ -1,9 +1,9 @@
-import { constants } from "buffer";
+/* eslint-disable */
+
 import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
-import InputHero from "~/components/InputHero";
 import OutputHero from "~/components/OutputHero";
 
 const Table: NextPage = () => {
@@ -11,7 +11,7 @@ const Table: NextPage = () => {
   const [result, setResult] = useState([]);
   const [selectedOption, setSelectedOption] = useState("");
   const [outputReady, setOutputReady] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); // add isLoading state
+  const [isLoading, setIsLoading] = useState(false);
 
   const options = [
     "people",
@@ -59,17 +59,14 @@ const Table: NextPage = () => {
         <div className="hero min-h-screen bg-base-200">
           <div className="hero-content text-center">
             <div className="max-w-md">
-            <Link href={"/"}>
-                <button className=" mb-5 btn-primary btn">
-                  Go back 
-                </button>
+              <Link href={"/"}>
+                <button className=" btn-primary btn mb-5">Go back</button>
               </Link>
               <form onSubmit={handleSubmit}>
                 <label>
                   Choose an option:
                   <select value={selectedOption} onChange={handleOptionChange}>
                     <option value="">--Select an option--</option>{" "}
-                    {/* default blank option */}
                     {options.map((option) => (
                       <option key={option} value={option}>
                         {option}
@@ -82,9 +79,7 @@ const Table: NextPage = () => {
                   Get table
                 </button>
               </form>
-              
               {isLoading && <p>Loading...</p>}{" "}
-              {/* display "Loading..." when isLoading is true */}
               {outputReady && (
                 <p className="mt-4 text-green-500">
                   Output is ready. scroll down!

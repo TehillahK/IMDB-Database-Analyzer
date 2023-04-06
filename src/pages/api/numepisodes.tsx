@@ -20,7 +20,7 @@ const query = async (req: NextApiRequest, res: NextApiResponse) => {
     const result = await pool
       .request()
       .query(
-        `SELECT name,year , COUNT(E.tconst) AS NUM_EPISODES
+        `SELECT name,year , COUNT(E.tconst) AS numEpisodes
         FROM Title T, TvEpisode E
         WHERE T.ID = E.parentTconst
         GROUP BY name, year

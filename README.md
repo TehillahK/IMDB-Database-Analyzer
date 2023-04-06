@@ -1,28 +1,37 @@
-# Create T3 App
+# COMP3380 Project Group8 ReadMe
+## Members
+Tehillah Kangamba ,80% contribution
+Kismat, Ali  , 20% contribution
+## Description
+This project was built with next js and typescript (which is a subset of javascript that lets you use explicit data types) to serve as both a frontend and server to make calls to the database separated from the front end . Next JS uses a folder routing system in the pages folder . So all backend calls are in the api folder .
+The frontend then makes rest api calls to the backend to get the data.For example index.tsx is the home page of our website and has functions like  fetchNumEpisodes () which makes an api call to api/numepisodes on the same domain found in pages/api/numepisodes.tsx where the sql query is run .
+## Requirements
+1. Node JS - https://nodejs.org/en/download
+If you do not already have Node ,you will need to install the current stable version of Node JS . After installation you can run then run the program.
+2. Python and the prodbc and  library
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+## Building Tables check build folder
+The file main.py builds the tables from the csv's in that folder. Running main.We used it to build the tables on the school server. The tables have already been built for convenience . 
 
-## What's next? How do I make an app with this?
+## HOW TO RUN
+1. Unzip the project.
+2. Open the project folder on terminal and first run the npm command below.
+   npm install
+3. Then run the npm command below.
+    npm run build
+4. Then start the program by running the command below in terminal after a .successful build.	
+	npm run start
+5. Then open your browser and enter the url http://localhost:3000/ ,the web page should load
+6. If run build did not work run  the code npm command below and open the url http://localhost:3000/
+    npm run dev
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## Queries
+### Main queries
+The first 4 buttons run prewritten queries like
+1. **Get All 10 star movies** ,this get all titles with 10 rating. Code is in the file ***pages/api/topmovies.tsx***
+2. **Num Episodes of TV Shows** , this gets every tv show in the data set and computes how many episodes they have. Code is in the file ***pages/api/numepisodes.tsx***
+3. **Female led movies** , gets all movies where the majority of the cast is women and having a high number of votes and high ratings ,so that it gets the most popular movies with a high rating .Code is in the file ***pages/api/femaleled.tsx***
+4. **Actors who got the most work** ,  gets actors who appeared in most titles. Code is in the file ***pages/api/actorwork.tsx***
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
-
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
-
-## Learn More
-
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
-
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
-
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+### Table queries
+This queries retrieves all the tables in our database. To acces you need to press the **See individual tables** button and it will load a new page .Click on select option and pick which table you want to see and then click on **Get Table** button aand wait for table to be ready and when it says its ready scroll down to see the table.

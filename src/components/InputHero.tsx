@@ -1,12 +1,21 @@
+/* eslint-disable */
+
 import Link from 'next/link';
 
 const InputHero = (props: any) => {
+  
   const getTopMovies = props.getTopMovies;
+ 
   const getNumEpisodes = props.numEpisodes;
+  
   const setResult = props.result;
+ 
   const getFemaleLedmovies = props.femaleLedMovies;
+  
   const actorStats = props.actorWork;
+  
   const isLoading = props.isLoading;
+  
   const outputReady = props.outputReady;
   let movies: any;
   return (

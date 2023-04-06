@@ -1,13 +1,13 @@
-import { constants } from "buffer";
+/* eslint-disable */
+
 import { type NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
 import { useState } from "react";
 import InputHero from "~/components/InputHero";
 import OutputHero from "~/components/OutputHero";
 
 const Home: NextPage = () => {
-  const [query, setQuery] = useState("");
+  
   const [result, setResult] = useState([]);
   const [outputReady, setOutputReady] = useState(false);
   const [isLoading, setIsLoading] = useState(false); // add isLoading state

@@ -1,6 +1,7 @@
+/* eslint-disable */
+
 import { type NextApiRequest, type NextApiResponse } from "next";
 import { ConnectionPool } from "mssql";
-import bodyParser from "body-parser";
 
 const config = {
   user: "alik2",

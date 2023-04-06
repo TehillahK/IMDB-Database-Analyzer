@@ -1,7 +1,9 @@
+/* eslint-disable */
+
 const OutputHero = (props: any) => {
   const result = props.result;
   const headers = result.length > 0 ? Object.keys(result[0]) : [];
-  //console.log(headers);
+  
   return (
     <div className="mt-4 flex justify-center">
       <div className="">
