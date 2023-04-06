@@ -28,7 +28,7 @@ const query = async (req: NextApiRequest, res: NextApiResponse) => {
         JOIN CastMember ON actor.ID = CastMember.actorID
         GROUP BY actor.name
         HAVING COUNT(DISTINCT CastMember.titleID) > 1
-        ORDER BY title_count DESC;
+        ORDER BY titleCount DESC;
 
         `
       );

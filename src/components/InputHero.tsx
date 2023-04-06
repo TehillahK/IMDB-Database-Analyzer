@@ -2,7 +2,8 @@ const InputHero = (props: any) => {
   const getTopMovies = props.getTopMovies;
   const getNumEpisodes = props.numEpisodes;
   const setResult = props.result;
-  const getFemaleLedmovies = props.femaleLedMovies;
+  const getFemaleLedmovies = props.femaleLedMovies; 
+  const actorStats = props.actorWork;
   let movies: any;
   return (
     <div className="hero min-h-screen bg-base-200">
@@ -43,13 +44,26 @@ const InputHero = (props: any) => {
           <button
             className="btn-primary btn"
             onClick={async () => {
-              movies = await getFemaleLedmovies();
+              movies = await actorStats();
               // console.log(movies);
               setResult(movies);
             }}
           >
             Actors who got the most work
           </button>
+        </div>
+        <div>
+        <button
+            className="btn-primary btn"
+            onClick={async () => {
+              movies = await actorStats();
+              // console.log(movies);
+              setResult(movies);
+            }}
+          >
+            See individual table
+          </button>
+
         </div>
       </div>
     </div>

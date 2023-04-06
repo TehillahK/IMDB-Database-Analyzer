@@ -43,6 +43,18 @@ const Home: NextPage = () => {
       throw error;
     }
   };
+
+  const fetchActorStats = async () => {
+    try {
+      const response = await fetch("/api/actorwork");
+      const data = await response.json();
+      // console.log(data);
+      return data;
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      throw error;
+    }
+  };
   return (
     <>
       <Head>
@@ -55,6 +67,7 @@ const Home: NextPage = () => {
           getTopMovies={fetchData}
           numEpisodes = {fetchNumEpisodes}
           femaleLedMovies ={fetchFemaleLedMoives}
+          actorWork ={fetchActorStats}
           result={(reqResult: any) => {
             setResult(reqResult);
           }}
