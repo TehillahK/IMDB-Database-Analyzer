@@ -3,12 +3,12 @@ const OutputHero = (props: any) => {
   const headers = result.length > 0 ? Object.keys(result[0]) : [];
   //console.log(headers);
   return (
-    <div className="hero min-h-screen bg-base-100">
-      <div className="hero-content text-center">
-        <div className="max-w-lg">
+    <div className="mt-4 flex justify-center">
+      <div className="">
+        <div className="">
           {result && (
             <div className="">
-              <table className="table w-full">
+              <table className="table w-fit">
                 <thead>
                   <tr>
                     {headers.map((header) => (

@@ -2,16 +2,16 @@ import { type NextApiRequest, type NextApiResponse } from "next";
 import { ConnectionPool } from "mssql";
 
 const config = {
-  user: "sa",
-  password: "Khumbolane99",
-  server: "localhost",
-  database: "imdb",
+  user: 'alik2',
+  password: '7896685',
+  server: 'uranium.cs.umanitoba.ca',
+  database: 'cs3380',
   options: {
-    encrypt: true,
-    enableArithAbort: true,
-    trustServerCertificate: true,
-    loginTimeout: 60, // Increase the login timeout to 60 seconds
-  },
+      encrypt: true,
+      enableArithAbort: true,
+      trustServerCertificate: true,
+      loginTimeout: 60 // Increase the login timeout to 60 seconds
+  }
 };
 
 const query = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -20,11 +20,11 @@ const query = async (req: NextApiRequest, res: NextApiResponse) => {
     const result = await pool
       .request()
       .query(
-        `SELECT name,year , COUNT(E.ID) AS NUM_EPISODES
+        `SELECT name,year , COUNT(E.tconst) AS NUM_EPISODES
         FROM Title T, TvEpisode E
-        WHERE T.ID=E.parentSeries
+        WHERE T.ID = E.parentTconst
         GROUP BY name, year
-        HAVING COUNT(E.ID)>10`
+        HAVING COUNT(E.tconst)>10`
        );
     res.status(200).json(result.recordset);
   } catch (err) {

@@ -31,6 +31,18 @@ const Home: NextPage = () => {
       throw error;
     }
   };
+
+  const fetchFemaleLedMoives = async () => {
+    try {
+      const response = await fetch("/api/femaleled");
+      const data = await response.json();
+      // console.log(data);
+      return data;
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      throw error;
+    }
+  };
   return (
     <>
       <Head>
@@ -42,6 +54,7 @@ const Home: NextPage = () => {
         <InputHero
           getTopMovies={fetchData}
           numEpisodes = {fetchNumEpisodes}
+          femaleLedMovies ={fetchFemaleLedMoives}
           result={(reqResult: any) => {
             setResult(reqResult);
           }}

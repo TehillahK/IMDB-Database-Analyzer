@@ -20,7 +20,17 @@ const query = async (req: NextApiRequest, res: NextApiResponse) => {
     const result = await pool
       .request()
       .query(
-        "SELECT t.name, t.year FROM Title t LEFT OUTER JOIN ratings R on t.ID= R.ID where R.averageRating=10;"
+        `
+        SELECT TOP 20
+         actor.name, 
+         COUNT(DISTINCT CastMember.titleID) AS titleCount
+        FROM actor
+        JOIN CastMember ON actor.ID = CastMember.actorID
+        GROUP BY actor.name
+        HAVING COUNT(DISTINCT CastMember.titleID) > 1
+        ORDER BY title_count DESC;
+
+        `
       );
     res.status(200).json(result.recordset);
   } catch (err) {
