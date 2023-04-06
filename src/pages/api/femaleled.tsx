@@ -18,28 +18,29 @@ const query = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const pool = await new ConnectionPool(config).connect();
     const result = await pool.request().query(
-      `SELECT  Top 20
-      t.name AS movie_title, 
+      `
+      SELECT  Top 20
+      t.name AS titleName, 
       TitleType.type,
-      COUNT(CASE WHEN a.gender = 'F' THEN 1 END) AS female_cast_count,
-      COUNT(CASE WHEN a.gender = 'M' THEN 1 END) AS male_cast_count,
-      AVG(r.averageRating ) AS average_rating,
-      COUNT(r.averageRating ) AS number_of_votes
-  FROM 
+      COUNT(CASE WHEN a.gender = 'F' THEN 1 END) AS fCount,
+      COUNT(CASE WHEN a.gender = 'M' THEN 1 END) AS mCount,
+      AVG(r.averageRating ) AS rating,
+      COUNT(r.averageRating ) AS numVotes
+      FROM 
       title t
       JOIN CastMember cm ON t.ID = cm.titleID
       JOIN actor a ON cm.actorID = a.ID
       JOIN ratings r ON t.ID = r.ID
       JOIN  types ty on ty.ID = t.ID
       JOIN TitleType on TitleType.ID  = ty.type
-  WHERE 
+      WHERE 
       a.gender IN ('F', 'M') AND r.averageRating  >= 8
-  GROUP BY 
+      GROUP BY 
       t.ID,TitleType.type, t.name
-  HAVING 
+      HAVING 
       COUNT(CASE WHEN a.gender = 'F' THEN 1 END) > COUNT(CASE WHEN a.gender = 'M' THEN 1 END)
-  ORDER BY 
-      number_of_votes DESC
+      ORDER BY 
+      numVotes DESC
   
         `
     );

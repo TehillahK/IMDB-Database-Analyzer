@@ -24,7 +24,7 @@ const query = async (req: NextApiRequest, res: NextApiResponse) => {
     const pool = await new ConnectionPool(config).connect();
     const result = await pool
       .request()
-      .query(`SELECT * FROM ${userInput}`);
+      .query(`SELECT TOP 1000 * FROM ${userInput}`);
     res.status(200).json(result.recordset);
   } catch (err) {
     console.error(err);
