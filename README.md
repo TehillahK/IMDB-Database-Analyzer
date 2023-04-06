@@ -10,8 +10,8 @@ The frontend then makes rest api calls to the backend to get the data.For exampl
 If you do not already have Node ,you will need to install the current stable version of Node JS . After installation you can run then run the program.
 2. Python and the prodbc and  library
 
-## Building Tables check build folder
-The file main.py builds the tables from the csv's in that folder. Running main.We used it to build the tables on the school server. The tables have already been built for convenience . 
+## Building Tables check build_tables folder
+The file main.py builds the tables from the csv's in the build_tables folder. Running main.We used it to build the tables on the school server. The tables have already been built for convenience . Our dataset is large ,so it might take a while , it was reduced to just titles from 2016-2018 but in order to have quality dataset for the sake of our queries we needed a lot of the data so that we have all the title types and atleast enough of the credited cast as possile.
 
 ## HOW TO RUN
 1. Unzip the project.
