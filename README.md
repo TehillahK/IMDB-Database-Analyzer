@@ -1,7 +1,8 @@
 # COMP3380 Project Group8 ReadMe
 ## Members
-Tehillah Kangamba ,80% contribution
-Kismat, Ali  , 20% contribution
+Tehillah Kangamba ,50% contribution
+Kismat Ali  , 35% contribution
+Kabir, Bakshi 15%
 ## Description
 This project was built with next js and typescript (which is a subset of javascript that lets you use explicit data types) to serve as both a frontend and server to make calls to the database separated from the front end . Next JS uses a folder routing system in the pages folder . So all backend calls are in the api folder .
 The frontend then makes rest api calls to the backend to get the data.For example index.tsx is the home page of our website and has functions like  fetchNumEpisodes () which makes an api call to api/numepisodes on the same domain found in pages/api/numepisodes.tsx where the sql query is run .
@@ -11,7 +12,7 @@ If you do not already have Node ,you will need to install the current stable ver
 2. Python and the prodbc and  library
 
 ## Building Tables check build_tables folder
-Unzip the project.The file main.py builds the tables from the csv's in the build_tables folder. Running main.We used it to build the tables on the school server. The tables have already been built for convenience . Our dataset is large ,so it might take a while , it was reduced to just titles from 2016-2018 but in order to have quality dataset for the sake of our queries we needed a lot of the data so that we have all the title types and atleast enough of the credited cast as possile.
+Unzip the project from .The file main.py builds the tables from the csv's in the build_tables folder. Running main.We used it to build the tables on the school server. The tables have already been built for convenience . Our dataset is large ,so it might take a while , it was reduced to just titles from 2016-2018 but in order to have quality dataset for the sake of our queries we needed a lot of the data so that we have all the title types and atleast enough of the credited cast as possile.
 
 ## HOW TO RUN
 
