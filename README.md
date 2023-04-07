@@ -12,7 +12,7 @@ If you do not already have Node ,you will need to install the current stable ver
 2. Python and the prodbc and  library
 
 ## Building Tables check build_tables folder
-Unzip the project from .The file main.py builds the tables from the csv's in the build_tables folder. Running main.We used it to build the tables on the school server. The tables have already been built for convenience . Our dataset is large ,so it might take a while , it was reduced to just titles from 2016-2018 but in order to have quality dataset for the sake of our queries we needed a lot of the data so that we have all the title types and atleast enough of the credited cast as possile.
+Unzip the project from zip file.The file main.py builds the tables from the csv's in the build_tables folder. Running main.We used it to build the tables on the school server. The tables have already been built for convenience . Our dataset is large ,so it might take a while , it was reduced to just titles from 2016-2018 but in order to have quality dataset for the sake of our queries we needed a lot of the data so that we have all the title types and atleast enough of the credited cast as possile.
 
 ## HOW TO RUN
 
